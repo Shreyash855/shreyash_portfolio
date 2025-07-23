@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shreyash Sarade - Fullstack Developer</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Custom Cursor -->
+    <div class="cursor"></div>
+    <div class="cursor-dot"></div>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">ShreyashSarade</div>
+            <ul class="nav-links">
+                <li><a href="#about">About</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-background"></div>
+        <div class="hero-content">
+            <div class="hero-intro">Hi, my name is</div>
+            <h1 class="hero-title">Shreyash Sarade</h1>
+            <h2 class="hero-subtitle">I build things for the web.</h2>
+            <p class="hero-description">
+                I'm a fullstack developer passionate about creating exceptional digital experiences. 
+                Currently focused on building scalable applications using modern technologies and best practices.
+            </p>
+            <a href="#projects" class="hero-cta">Check out my work!</a>
+        </div>
+        <div class="code-animation">
+            <div class="code-content">
+                const developer = {<br>
+                &nbsp;&nbsp;name: "Shreyash Sarade",<br>
+                &nbsp;&nbsp;role: "Fullstack Developer",<br>
+                &nbsp;&nbsp;code: ["JavaScript", "Python", "React"]<br>
+                };
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <h2 class="section-title fade-in">About Me</h2>
+        <div class="about-content fade-in">
+            <div class="about-text">
+                <p>
+                    I'm a passionate Full-Stack Developer with a love for crafting seamless, innovative web applications 
+                    from concept to deployment. With a strong foundation in both front-end and back-end technologies, 
+                    I thrive on turning ideas into functional, user-friendly digital experiences.
+                </p>
+                <p>
+                    Beyond my expertise in full-stack development, I am an avid Machine Learning enthusiast. 
+                    I dedicatedly explore AI algorithms, data modeling, and predictive analytics, constantly 
+                    seeking ways to integrate intelligent solutions into real-world applications.
+                </p>
+                <p>
+                    Driven by curiosity and a relentless desire to learn, I enjoy bridging the worlds of web development 
+                    and AI to build smarter, more efficient systems. Whether it's developing a dynamic website or 
+                    experimenting with the latest in machine learning, I’m always eager to push boundaries and create 
+                    meaningful, impactful technology.
+                </p>
+                <p>Here are a few technologies I've been working with recently:</p>
+                <div class="tech-stack">
+                    <div class="tech-item">Java</div>
+                    <div class="tech-item">Angular</div>
+                    <div class="tech-item">JavaScript</div>
+                    <div class="tech-item">TypeScript</div>
+                    <div class="tech-item">Node.js</div>
+                    <div class="tech-item">PostgreSQL</div>
+                    <div class="tech-item">MySQL</div>
+                    <div class="tech-item">Python</div>
+                    <div class="tech-item">Django</div>
+
+                </div>
+            </div>
+            <div class="about-image">
+                <img src="assets/profile_pic.jpg" alt="" height="300" width="300">
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="experience">
+        <div class="experience-container">
+            <h2 class="experience-title fade-in">Where I've Worked</h2>
+            <div class="fade-in">
+                <div class="job-tabs">
+                    <button class="job-tab active" data-tab="tab1">Worldline</button>
+                    <button class="job-tab" data-tab="tab2">Mass Technologies</button>
+                </div>
+                <div class="job-content">
+                    <div id="tab1" class="job-panel active">
+                        <h3 class="job-title">Java Backend Developer</h3>
+                        <div class="job-company">@Worldline</div>
+                        <div class="job-duration">September 2023 - Present</div>
+                        <ul class="job-description">
+                            <li>Currently working on SOFIE(Secure Online File Exchange) which is a file exchange software using Asymmetric key Cryptography.</li>
+                            <li>Developing and optimizing code with a focus on high performance and scalability</li>
+                            <li>Enhancement of UI/UX by adding new features that help customers interact seamlessly with the application, improving accessibility, usability, and overall user satisfaction.</li>
+                            <li>Debugging and fixing bugs.</li>
+                            <li>Solved some of the critical issue like ( Large file transfer, replacement of IAIK Library )</li>
+                        </ul>
+                    </div>
+                    <div id="tab2" class="job-panel">
+                        <h3 class="job-title">Machine Learning Intern</h3>
+                        <div class="job-company">@masstechnologies</div>
+                        <div class="job-duration">June 2022 - December 2022</div>
+                        <ul class="job-description">
+                            <li>Refined and upgraded Knee Osteoarthritis deep learning model to improve performance.</li>
+                            <li>Implementation of Image enhancements techniques to improve CNN models.</li>
+                            <li>Using classification algorithm on twitter analysis project.</li>
+                            <li>Collecting data set for ECG signal and applying machine learning algorithm on them.</li>
+                            <li>Classification of defective Soyabean seeds using Deep learning and Image Processing</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="projects">
+        <h2 class="projects-title fade-in">Some Things I've Built</h2>
+        <div class="projects-grid">
+            <div class="project-card fade-in">
+                <div class="project-image"></div>
+                <div class="project-content">
+                    <div class="project-featured">Featured Project</div>
+                    <h3 class="project-title">E-Commerce Platform</h3>
+                    <div class="project-description">
+                        A full-stack e-commerce application built with Angular, Spring boot, and MySQL. 
+                        Features include user authentication, payment processing, inventory management, 
+                        and real-time order tracking.
+                    </div>
+                    <div class="project-tech">
+                        <span class="tech-tag">Angular</span>
+                        <span class="tech-tag">Java</span>
+                        <span class="tech-tag">Spring boot</span>
+                        <span class="tech-tag">Postman</span>
+                        <span class="tech-tag">MySQL</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="#" class="project-link" aria-label="External Link">🔗</a>
+                        <a href="#" class="project-link" aria-label="GitHub Repository">📁</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-card fade-in">
+                <div class="project-image">
+                    <img src="assets/movie_ticket_booking_website.png" alt="" height="300px" width="100%">
+                </div>
+                <div class="project-content">
+                    <div class="project-featured">Featured Project</div>
+                    <h3 class="project-title">Movie Ticket Booking Website</h3>
+                    <div class="project-description">
+                        Demo protoype for booking movie tickets built by HTML, CSS and JS
+                    </div>
+                    <div class="project-tech">
+                        <span class="tech-tag">HTML</span>
+                        <span class="tech-tag">CSS</span>
+                        <span class="tech-tag">JS</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://github.com/Shreyash855/Movie_Ticket_Booking_Website"  aria-label="GitHub Repository" target="_blank">📁🔗</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-card fade-in">
+                <div class="project-image">
+                    <img src="assets/starbucks_landing_page.png" height="300px" width="100%">
+                </div>
+                <div class="project-content">
+                    <div class="project-featured">Featured Project</div>
+                    <h3 class="project-title">Starbucks UI/UX</h3>
+                    <div class="project-description">
+                        Starbucks landing page built with HTML and CSS. A front end project of my first year of college
+                    </div>
+                    <div class="project-tech">
+                        <span class="tech-tag">HTML</span>
+                        <span class="tech-tag">CSS</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://github.com/Shreyash855/Starbucks-clone-Project" aria-label="GitHub Repository" target="_blank">📁🔗</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="contact-container fade-in">
+            <h2 class="contact-title">What's Next?</h2>
+            <h3 class="contact-subtitle">Get In Touch</h3>
+            <p class="contact-description">
+                My inbox is wide open! Whether you've got a question, a collaboration idea, or just want to say hi, I’d love to hear from you. Don’t hesitate—let’s connect and create something amazing together!
+            </p>
+            <a href="mailto:shreyashsarade@gmail.com" class="contact-button">Say Hello</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="social-links">
+            <a href="https://github.com/Shreyash855?tab=repositories" class="social-link" aria-label="GitHub" target="_blank"><img src="assets/github_logo.png" alt="" height="30px" width="30px"></a>
+            <a href="https://www.linkedin.com/in/shreyash-sarade-917165218/" class="social-link" aria-label="LinkedIn"target="_blank"><img src="assets/linkedinlogo.png" alt="" height="30px" width="30px"></a>
+            <a href="https://www.instagram.com/shreyas_sarade_108/" class="social-link" aria-label="Instagram" target="_blank"><img src="assets/Instagram_icon.png" alt="" height="30px" width="30px"></a>
+        </div>
+        <div class="footer-text">@Copyright 2025 Built by Shreyash Sarade</div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
