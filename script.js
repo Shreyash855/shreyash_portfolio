@@ -538,6 +538,38 @@ class AnimationSystem {
     }
 }
 
+// ===== SKILLS ANIMATION =====
+class SkillsAnimation {
+    constructor() {
+        this.init();
+    }
+
+    init() {
+        this.setupSkillsObserver();
+    }
+
+    setupSkillsObserver() {
+        const skillObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const skillBars = entry.target.querySelectorAll('.skill-progress');
+                    skillBars.forEach((bar, index) => {
+                        setTimeout(() => {
+                            const width = bar.getAttribute('data-width');
+                            bar.style.width = width;
+                        }, index * 200);
+                    });
+                }
+            });
+        }, { threshold: 0.5 });
+
+        const skillsSection = document.querySelector('.skills');
+        if (skillsSection) {
+            skillObserver.observe(skillsSection);
+        }
+    }
+}
+
 // ===== INITIALIZATION =====
 class PortfolioApp {
     constructor() {
@@ -548,6 +580,7 @@ class PortfolioApp {
     init() {
         this.waitForDOMReady(() => {
             this.initializeComponents();
+            this.initializeSkillsAnimation();
             this.handlePageLoad();
         });
     }
@@ -576,6 +609,10 @@ class PortfolioApp {
         );
 
         console.log('Portfolio initialized with', this.components.length, 'components');
+    }
+
+    initializeSkillsAnimation() {
+        new SkillsAnimation();
     }
 
     handlePageLoad() {

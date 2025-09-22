@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Building Scalable Web Applications - Blog | Shreyash Sarade</title>
+    <link rel="stylesheet" href="../style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo"><a href="../index.html" style="text-decoration:none;color:inherit">ShreyashSarade</a></div>
+            <ul class="nav-links">
+                <li><a href="../index.html#about">About</a></li>
+                <li><a href="../index.html#skills">Skills</a></li>
+                <li><a href="../index.html#experience">Experience</a></li>
+                <li><a href="../index.html#projects">Projects</a></li>
+                <li><a href="../index.html#blog">Blog</a></li>
+                <li><a href="../index.html#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="blog post" style="padding-top:140px">
+        <div class="blog-container" style="display:block;max-width:900px">
+            <article class="blog-card" style="border:none;box-shadow:none;background:transparent">
+                <header class="blog-image" style="height:260px;margin-bottom:20px">
+                    <div class="blog-placeholder">📝</div>
+                </header>
+                <div class="blog-content" style="background:var(--bg-secondary);border:1px solid rgba(100,255,218,0.1);border-radius:10px">
+                    <div class="blog-meta">
+                        <span class="blog-date">Dec 2024</span>
+                        <span class="blog-category">Development</span>
+                    </div>
+                    <h1 class="blog-title">Building Scalable Web Applications with Modern Architecture</h1>
+                    <p class="blog-excerpt">How I approach designing web apps for scale, reliability, and maintainability.</p>
+
+                    <section class="blog-body" style="color:var(--text-secondary);line-height:1.85">
+                        <h3 style="color:var(--text-primary);margin:18px 0 8px">1. Start with clear boundaries</h3>
+                        <p>Define domains and responsibilities early. Whether it is modular monolith or microservices, explicit boundaries reduce coupling and improve evolvability.</p>
+
+                        <h3 style="color:var(--text-primary);margin:18px 0 8px">2. Data and caching strategy</h3>
+                        <p>Read-heavy systems benefit from layered caching (client → CDN → server). Design cache invalidation rules alongside your data model.</p>
+
+                        <h3 style="color:var(--text-primary);margin:18px 0 8px">3. Async by default</h3>
+                        <p>Use queues and events for non-blocking work. This improves latency and isolates failures.</p>
+
+                        <h3 style="color:var(--text-primary);margin:18px 0 8px">4. Observability</h3>
+                        <p>Tracing, structured logs, and metrics are non-negotiable. You can’t scale what you can’t see.</p>
+
+                        <h3 style="color:var(--text-primary);margin:18px 0 8px">5. Frontend performance</h3>
+                        <p>Code-split, lazy load, and prefetch critical routes. Optimize images and animations for 60fps.</p>
+                    </section>
+
+                    <div style="margin-top:24px;display:flex;justify-content:space-between;gap:12px">
+                        <a class="blog-link" href="../index.html#blog">← Back to Blog</a>
+                        <a class="blog-link" href="asymmetric-cryptography-file-exchange.html">Next: Asymmetric Cryptography →</a>
+                    </div>
+                </div>
+            </article>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="social-links">
+            <a href="https://github.com/Shreyash855?tab=repositories" class="social-link" aria-label="GitHub" target="_blank"><img src="../assets/github_logo.png" alt="" height="30" width="30"></a>
+            <a href="https://www.linkedin.com/in/shreyash-sarade-917165218/" class="social-link" aria-label="LinkedIn" target="_blank"><img src="../assets/linkedinlogo.png" alt="" height="30" width="30"></a>
+            <a href="https://www.instagram.com/shreyas_sarade_108/" class="social-link" aria-label="Instagram" target="_blank"><img src="../assets/Instagram_icon.png" alt="" height="30" width="30"></a>
+        </div>
+        <div class="footer-text">@Copyright 2025 Built by Shreyash Sarade</div>
+    </footer>
+
+    <script src="../script.js"></script>
+</body>
+</html>
+
+
