@@ -125,12 +125,48 @@ body {
     transform: translateY(-2px);
 }
 
+.nav-toggle {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+    width: 30px;
+    height: 24px;
+    margin-left: 15px;
+    padding: 0;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+.nav-toggle span {
+    display: block;
+    height: 2px;
+    width: 100%;
+    background: var(--text-primary);
+    border-radius: 2px;
+    transition: var(--transition-smooth);
+}
+
+.nav-toggle.active span:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+}
+
+.nav-toggle.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.nav-toggle.active span:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
+}
+
 .nav-container {
     display: flex;
     justify-content: space-between;
     align-items: center;
     max-width: 1400px;
     margin: 0 auto;
+    position: relative;
 }
 
 .nav-right {
@@ -719,6 +755,21 @@ body {
     box-shadow: var(--shadow-glow);
 }
 
+.contact-fallback {
+    margin-top: 20px;
+    font-size: 14px;
+    color: var(--text-secondary);
+}
+
+.contact-fallback a {
+    color: var(--accent-blue);
+    text-decoration: none;
+}
+
+.contact-fallback a:hover {
+    text-decoration: underline;
+}
+
 /* ===== FOOTER ===== */
 .footer {
     padding: 40px 50px;
@@ -778,11 +829,39 @@ body {
     .navbar {
         padding: 15px 20px;
     }
-    
-    .nav-links {
-        gap: 20px;
+
+    .nav-toggle {
+        display: flex;
     }
-    
+
+    .nav-links {
+        position: absolute;
+        top: calc(100% + 1px);
+        left: 0;
+        right: 0;
+        flex-direction: column;
+        gap: 0;
+        max-height: 0;
+        overflow: hidden;
+        background: rgba(var(--bg-primary-rgb), 0.98);
+        backdrop-filter: blur(15px);
+        border-bottom: 1px solid rgba(var(--accent-blue-rgb), 0.15);
+        transition: max-height 0.3s ease;
+    }
+
+    .nav-links.open {
+        max-height: 400px;
+    }
+
+    .nav-links li {
+        margin: 0;
+    }
+
+    .nav-links a {
+        display: block;
+        padding: 16px 20px;
+    }
+
     .hero {
         padding: 0 20px;
     }

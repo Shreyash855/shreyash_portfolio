@@ -7,7 +7,8 @@
     <title>Shreyash Sarade - Portfolio</title>
     <script>
         (function () {
-            var theme = localStorage.getItem('theme') || 'dark';
+            var stored = localStorage.getItem('theme');
+            var theme = stored || (window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
             document.documentElement.setAttribute('data-theme', theme);
         })();
     </script>
@@ -26,7 +27,7 @@
         <div class="nav-container">
             <div class="logo">ShreyashSarade</div>
             <div class="nav-right">
-                <ul class="nav-links">
+                <ul class="nav-links" id="navLinks">
                     <li><a href="#about">About</a></li>
                     <li><a href="#skills">Skills</a></li>
                     <li><a href="#experience">Experience</a></li>
@@ -36,6 +37,11 @@
                     <li><a href="#contact">Contact</a></li>
                 </ul>
                 <button id="themeToggle" class="theme-toggle" aria-label="Toggle light/dark theme" type="button">🌙</button>
+                <button id="navToggle" class="nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="navLinks" type="button">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
             </div>
         </div>
     </nav>
@@ -545,6 +551,7 @@
                 My inbox is wide open! Whether you've got a question, a collaboration idea, or just want to say hi, I’d love to hear from you. Don’t hesitate—let’s connect and create something amazing together!
             </p>
             <a href="mailto:shreyashsarade@gmail.com" class="contact-button">Say Hello</a>
+            <p class="contact-fallback">or reach me directly at <a href="mailto:shreyashsarade@gmail.com">shreyashsarade@gmail.com</a></p>
         </div>
     </section>
 

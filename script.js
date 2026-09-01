@@ -107,6 +107,44 @@ class Navigation {
     }
 }
 
+// ===== MOBILE NAVIGATION =====
+class MobileNav {
+    constructor() {
+        this.toggle = $('#navToggle');
+        this.navLinks = $('#navLinks');
+        this.init();
+    }
+
+    init() {
+        if (!this.toggle || !this.navLinks) return;
+
+        this.toggle.addEventListener('click', () => this.toggleMenu());
+
+        this.navLinks.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => this.closeMenu());
+        });
+
+        document.addEventListener('click', (e) => {
+            const isOpen = this.navLinks.classList.contains('open');
+            if (isOpen && !this.navLinks.contains(e.target) && !this.toggle.contains(e.target)) {
+                this.closeMenu();
+            }
+        });
+    }
+
+    toggleMenu() {
+        const isOpen = this.navLinks.classList.toggle('open');
+        this.toggle.classList.toggle('active', isOpen);
+        this.toggle.setAttribute('aria-expanded', String(isOpen));
+    }
+
+    closeMenu() {
+        this.navLinks.classList.remove('open');
+        this.toggle.classList.remove('active');
+        this.toggle.setAttribute('aria-expanded', 'false');
+    }
+}
+
 // ===== EXPERIENCE TABS =====
 class ExperienceTabs {
     constructor() {
@@ -373,7 +411,9 @@ class PerformanceOptimizer {
 // ===== THEME MANAGER =====
 class ThemeManager {
     constructor() {
-        this.theme = localStorage.getItem('theme') || 'dark';
+        const stored = localStorage.getItem('theme');
+        const prefersLight = window.matchMedia('(prefers-color-scheme: light)').matches;
+        this.theme = stored || (prefersLight ? 'light' : 'dark');
         this.toggleButton = $('#themeToggle');
         this.init();
     }
@@ -597,6 +637,7 @@ class PortfolioApp {
         this.components.push(
             new CustomCursor(),
             new Navigation(),
+            new MobileNav(),
             new ExperienceTabs(),
             new ScrollAnimations(),
             new TypingAnimation(),
