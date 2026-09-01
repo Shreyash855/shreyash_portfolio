@@ -58,17 +58,7 @@ class Navigation {
 
     handleScroll() {
         window.addEventListener('scroll', () => {
-            const scrollY = window.scrollY;
-            
-            if (scrollY > 50) {
-                this.navbar.style.background = 'rgba(10, 14, 39, 0.98)';
-                this.navbar.style.backdropFilter = 'blur(15px)';
-                this.navbar.style.boxShadow = '0 10px 30px rgba(0, 0, 0, 0.3)';
-            } else {
-                this.navbar.style.background = 'rgba(10, 14, 39, 0.95)';
-                this.navbar.style.backdropFilter = 'blur(10px)';
-                this.navbar.style.boxShadow = 'none';
-            }
+            this.navbar.classList.toggle('scrolled', window.scrollY > 50);
         });
     }
 
@@ -384,16 +374,18 @@ class PerformanceOptimizer {
 class ThemeManager {
     constructor() {
         this.theme = localStorage.getItem('theme') || 'dark';
+        this.toggleButton = $('#themeToggle');
         this.init();
     }
 
     init() {
-        this.applyTheme();
         this.createThemeToggle();
+        this.applyTheme();
     }
 
     applyTheme() {
         document.documentElement.setAttribute('data-theme', this.theme);
+        this.updateToggleIcon();
     }
 
     toggleTheme() {
@@ -403,8 +395,15 @@ class ThemeManager {
     }
 
     createThemeToggle() {
-        // This could be expanded to include a theme toggle button
-        console.log('Theme system initialized:', this.theme);
+        if (this.toggleButton) {
+            this.toggleButton.addEventListener('click', () => this.toggleTheme());
+        }
+    }
+
+    updateToggleIcon() {
+        if (this.toggleButton) {
+            this.toggleButton.textContent = this.theme === 'dark' ? '☀️' : '🌙';
+        }
     }
 }
 

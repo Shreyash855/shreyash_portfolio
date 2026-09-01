@@ -9,6 +9,10 @@
     --accent-purple: #8b5cf6;
     --accent-green: #22c55e;
     --accent-orange: #f59e0b;
+    --bg-primary-rgb: 10, 14, 39;
+    --accent-blue-rgb: 100, 255, 218;
+    --accent-purple-rgb: 139, 92, 246;
+    --accent-green-rgb: 34, 197, 94;
     --gradient-primary: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
     --gradient-secondary: linear-gradient(135deg, #64ffda 0%, #8b5cf6 100%);
     --gradient-accent: linear-gradient(135deg, #22c55e 0%, #64ffda 100%);
@@ -16,6 +20,27 @@
     --transition-smooth: all 0.3s ease;
     --border-radius: 10px;
     --font-mono: 'JetBrains Mono', 'Fira Code', 'Consolas', monospace;
+}
+
+/* ===== LIGHT THEME ===== */
+:root[data-theme="light"] {
+    --bg-primary: #ffffff;
+    --bg-secondary: #f4f6fb;
+    --bg-accent: #e7ebf5;
+    --text-primary: #0a0e27;
+    --text-secondary: #4a5568;
+    --accent-blue: #0e7490;
+    --accent-purple: #7c3aed;
+    --accent-green: #15803d;
+    --accent-orange: #b45309;
+    --bg-primary-rgb: 255, 255, 255;
+    --accent-blue-rgb: 14, 116, 144;
+    --accent-purple-rgb: 124, 58, 237;
+    --accent-green-rgb: 21, 128, 61;
+    --gradient-primary: linear-gradient(135deg, #6366f1 0%, #7c3aed 100%);
+    --gradient-secondary: linear-gradient(135deg, #0e7490 0%, #7c3aed 100%);
+    --gradient-accent: linear-gradient(135deg, #15803d 0%, #0e7490 100%);
+    --shadow-glow: 0 0 20px rgba(14, 116, 144, 0.25);
 }
 
 /* ===== RESET & BASE STYLES ===== */
@@ -64,11 +89,40 @@ body {
     top: 0;
     width: 100%;
     padding: 20px 50px;
-    background: rgba(10, 14, 39, 0.95);
+    background: rgba(var(--bg-primary-rgb), 0.95);
     backdrop-filter: blur(10px);
-    border-bottom: 1px solid rgba(100, 255, 218, 0.1);
+    border-bottom: 1px solid rgba(var(--accent-blue-rgb), 0.1);
+    box-shadow: none;
     z-index: 1000;
     transition: var(--transition-smooth);
+}
+
+.navbar.scrolled {
+    background: rgba(var(--bg-primary-rgb), 0.98);
+    backdrop-filter: blur(15px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+.theme-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 38px;
+    height: 38px;
+    margin-left: 20px;
+    background: transparent;
+    border: 1px solid rgba(var(--accent-blue-rgb), 0.3);
+    border-radius: 50%;
+    font-size: 16px;
+    line-height: 1;
+    cursor: pointer;
+    transition: var(--transition-smooth);
+}
+
+.theme-toggle:hover {
+    border-color: var(--accent-blue);
+    box-shadow: var(--shadow-glow);
+    transform: translateY(-2px);
 }
 
 .nav-container {
@@ -77,6 +131,11 @@ body {
     align-items: center;
     max-width: 1400px;
     margin: 0 auto;
+}
+
+.nav-right {
+    display: flex;
+    align-items: center;
 }
 
 .logo {
@@ -138,8 +197,8 @@ body {
     width: 100%;
     height: 100%;
     background: 
-        radial-gradient(circle at 25% 25%, rgba(100, 255, 218, 0.1) 0%, transparent 50%),
-        radial-gradient(circle at 75% 75%, rgba(139, 92, 246, 0.1) 0%, transparent 50%);
+        radial-gradient(circle at 25% 25%, rgba(var(--accent-blue-rgb), 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 75% 75%, rgba(var(--accent-purple-rgb), 0.1) 0%, transparent 50%);
     animation: float 8s ease-in-out infinite;
 }
 
@@ -412,12 +471,12 @@ body {
 
 .job-tab.active {
     color: var(--accent-blue);
-    background: rgba(100, 255, 218, 0.05);
+    background: rgba(var(--accent-blue-rgb), 0.05);
     border-left-color: var(--accent-blue);
 }
 
 .job-tab:hover {
-    background: rgba(100, 255, 218, 0.05);
+    background: rgba(var(--accent-blue-rgb), 0.05);
 }
 
 .job-content {
@@ -656,7 +715,7 @@ body {
 }
 
 .contact-button:hover {
-    background: rgba(100, 255, 218, 0.1);
+    background: rgba(var(--accent-blue-rgb), 0.1);
     box-shadow: var(--shadow-glow);
 }
 
@@ -665,7 +724,7 @@ body {
     padding: 40px 50px;
     text-align: center;
     background: var(--bg-primary);
-    border-top: 1px solid rgba(100, 255, 218, 0.1);
+    border-top: 1px solid rgba(var(--accent-blue-rgb), 0.1);
 }
 
 .social-links {
@@ -884,7 +943,7 @@ button:focus {
     background: var(--bg-accent);
     padding: 20px;
     border-radius: var(--border-radius);
-    border: 1px solid rgba(100, 255, 218, 0.1);
+    border: 1px solid rgba(var(--accent-blue-rgb), 0.1);
     transition: var(--transition-smooth);
 }
 
@@ -904,7 +963,7 @@ button:focus {
 .skill-bar {
     width: 100%;
     height: 8px;
-    background: rgba(100, 255, 218, 0.1);
+    background: rgba(var(--accent-blue-rgb), 0.1);
     border-radius: 4px;
     overflow: hidden;
     margin-bottom: 8px;
@@ -961,7 +1020,7 @@ button:focus {
     background: var(--bg-secondary);
     padding: 30px;
     border-radius: var(--border-radius);
-    border: 1px solid rgba(100, 255, 218, 0.1);
+    border: 1px solid rgba(var(--accent-blue-rgb), 0.1);
     transition: var(--transition-smooth);
     position: relative;
     overflow: hidden;
@@ -1036,7 +1095,7 @@ button:focus {
     background: var(--bg-accent);
     padding: 30px;
     border-radius: var(--border-radius);
-    border: 1px solid rgba(100, 255, 218, 0.1);
+    border: 1px solid rgba(var(--accent-blue-rgb), 0.1);
     transition: var(--transition-smooth);
     text-align: center;
     position: relative;
@@ -1056,7 +1115,7 @@ button:focus {
 .cert-card:hover {
     transform: translateY(-5px);
     border-color: var(--accent-green);
-    box-shadow: 0 0 20px rgba(34, 197, 94, 0.3);
+    box-shadow: 0 0 20px rgba(var(--accent-green-rgb), 0.3);
 }
 
 .cert-icon {
@@ -1100,7 +1159,7 @@ button:focus {
 .blog-card {
     background: var(--bg-secondary);
     border-radius: var(--border-radius);
-    border: 1px solid rgba(100, 255, 218, 0.1);
+    border: 1px solid rgba(var(--accent-blue-rgb), 0.1);
     transition: var(--transition-smooth);
     overflow: hidden;
     position: relative;
